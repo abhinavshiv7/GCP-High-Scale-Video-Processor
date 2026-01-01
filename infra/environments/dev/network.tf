@@ -21,7 +21,7 @@ resource "google_compute_subnetwork" "subnet" {
   }
 }
 
-# Cloud Router & NAT (Required for Private Nodes to pull Docker images)
+# Cloud Router & NAT (Required for Private Nodes to pull Docker images) Abhinav
 resource "google_compute_router" "router" {
   name    = "video-router"
   region  = "us-central1"
