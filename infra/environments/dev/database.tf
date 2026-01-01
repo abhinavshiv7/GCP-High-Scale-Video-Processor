@@ -7,7 +7,6 @@ resource "google_compute_global_address" "private_ip_address" {
   prefix_length = 16
   network       = google_compute_network.vpc.id
 }
-
 # 2. Create the VPC Peering connection
 # This "connects" the Google-managed network (where Cloud SQL lives) to your VPC
 resource "google_service_networking_connection" "private_vpc_connection" {
@@ -16,7 +15,7 @@ resource "google_service_networking_connection" "private_vpc_connection" {
   reserved_peering_ranges = [google_compute_global_address.private_ip_address.name]
 }
 
-# 3. The Random ID for the instance name
+# 3. The Random ID for the instance name Abhinav
 # Cloud SQL instance names cannot be reused immediately after deletion. 
 # This saves the headaches during "terraform destroy/apply" cycles.
 resource "random_id" "db_name_suffix" {
