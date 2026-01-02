@@ -15,7 +15,7 @@ resource "google_service_networking_connection" "private_vpc_connection" {
   reserved_peering_ranges = [google_compute_global_address.private_ip_address.name]
 }
 
-# 3. The Random ID for the instance name Abhinav
+# 3. The Random ID for the instance name abhinav
 # Cloud SQL instance names cannot be reused immediately after deletion. 
 # This saves the headaches during "terraform destroy/apply" cycles.
 resource "random_id" "db_name_suffix" {
